@@ -1,4 +1,4 @@
-# sicp-exercises
+# SICP Exercises
 
 ## Requirements
 
