@@ -1,6 +1,6 @@
 #lang sicp
 
-(define (cube x) (* x x x))
+(#%require "basics.rkt")
 
 (define (sum term a next b)
   (if (> a b)

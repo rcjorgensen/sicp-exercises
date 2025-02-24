@@ -1,15 +1,13 @@
 #lang sicp
 
+(#%require "basics.rkt")
+
 (define (product term a next b)
   (define (iter a result)
     (if (> a b)
         result
         (iter (next a) (* result (term a)))))
   (iter a 1))
-
-(define (identity x) x)
-
-(define (inc x) (+ x 1))
 
 (define (factorial n)
   (product identity 1 inc n))
@@ -26,8 +24,6 @@
 ; 24
 (factorial 5)
 ; 120
-
-(define (square x) (* x x))
 
 (define (pi-product a b)
   (define (pi-term x)

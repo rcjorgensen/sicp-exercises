@@ -1,5 +1,7 @@
 #lang sicp
 
+(#%require "basics.rkt")
+
 (define (filtered-accumulate combiner null-value term a next b keep?)
   (define (iter a result)
     (if (> a b)
@@ -13,24 +15,6 @@
 (sum-even 1 10)
 ; 30
 
-(define (square x) (* x x))
-
-(define (divides? a b)
-  (= (remainder b a) 0))
-
-(define (find-divisor n test-divisor)
-  (cond ((> (square test-divisor) n) n)
-        ((divides? test-divisor n) test-divisor)
-        (else (find-divisor n (+ test-divisor 1)))))
-
-(define (smallest-divisor n)
-  (find-divisor n 2))
-
-(define (prime? n)
-  (if (<= n 1 )
-      #f
-      (= n (smallest-divisor n))))
-
 (prime? 1)
 ; #f
 
@@ -39,17 +23,6 @@
 
 (sum-squares-of-primes 1 10)
 ; 87
-
-(define (gcd a b)
-  (if (= b 0)
-      a
-      (gcd b (remainder a b))))
-
-(gcd 206 40)
-; 2
-
-(define (relative-prime? a b)
-  (= (gcd a b) 1))
 
 (relative-prime? 4 9)
 ; #t
