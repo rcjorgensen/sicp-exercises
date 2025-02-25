@@ -26,3 +26,9 @@
 (#%provide relative-prime?)
 (define (relative-prime? a b)
   (= (gcd a b) 1))
+
+(#%provide fast-expt)
+(define (fast-expt b n)
+  (cond ((= n 0) 1)
+        ((even? n) (square (fast-expt b (/ n 2))))
+        (else (* b (fast-expt b (- n 1))))))
