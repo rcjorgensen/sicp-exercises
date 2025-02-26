@@ -16,3 +16,6 @@
 
 (fixed-point (lambda (x) (/ (log 1000) (log x))) 10.0)
 
+(define (average x y) (/ (+ x y) 2))
+
+(fixed-point (lambda (x) (average x (/ (log 1000) (log x)))) 10.0)
