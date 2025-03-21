@@ -1,6 +1,6 @@
 #lang sicp
 
-(#%require "basics.rkt")
+(define (square x) (* x x))
 
 (define (product term a next b)
   (define (iter a result)

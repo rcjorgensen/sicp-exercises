@@ -1,6 +1,7 @@
 #lang sicp
 
-(#%require "basics.rkt")
+(define (square x) (* x x))
+(define (cube x) (* x x x))
 
 (define (improve guess x)
   (/ (+ (/ x
