@@ -30,7 +30,12 @@
 (define (multiplier p) (cadr p))
 (define (multiplicand p) (caddr p))
 
-; Exercise 2.56 - Exponentation
+
+
+(display "Exercise 2.56 - Exponentiation") (newline)
+
+
+
 (define (exponentiation? x) (and (pair? x) (eq? (car x) '**)))
 (define (base e) (cadr e))
 (define (exponent e) (caddr e))
@@ -66,3 +71,12 @@
 (deriv '(** x 2) 'x)
 (deriv '(** x 3) 'x)
 (deriv '(** (* x y) 3) 'x)
+
+
+
+
+
+
+(display "Exercise 2.57 - Sums and products of arbitrary numbers of terms") (newline)
+
+(deriv '(* x y (+ x 3)) 'x)
