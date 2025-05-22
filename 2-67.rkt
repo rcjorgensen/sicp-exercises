@@ -36,8 +36,8 @@
       (cadddr tree)))
 
 (define (decode bits tree)
-  ;; We need the helper function `decode-1` because we need to keep `tree` around for when a symbol has been decoded and we start again from the root.
-  ;; If we didn't have the helper, `tree` would be replaced by its children in the recursion.
+  ; We need the helper function `decode-1` because we need to keep `tree` around for when a symbol has been decoded and we start again from the root.
+  ; If we didn't have the helper, `tree` would be replaced by its children in the recursion.
   (define (decode-1 bits current-branch)
     (if (null? bits)
         '()
@@ -45,7 +45,7 @@
                (choose-branch (car bits) current-branch)))
           (if (leaf? next-branch)
               (cons (symbol-leaf next-branch)
-                    (decode-1 (cdr bits) tree)) ;; Now we start over decoding `tree` with the remaining bits
+                    (decode-1 (cdr bits) tree)) ; Now we start over decoding `tree` with the remaining bits
               (decode-1 (cdr bits) next-branch)))))
   (decode-1 bits tree))
 
@@ -93,4 +93,4 @@
 (define sample-message '(0 1 1 0 0 1 0 1 0 1 1 1 0))
 
 (decode sample-message sample-tree)
-;; (A D A B B C A)
+; (A D A B B C A)
